@@ -1,8 +1,7 @@
 package com.example.cv_back.domain.user;
 
 
-import com.example.cv_back.domain.user.User;
-import com.example.cv_back.domain.user.UserRepository;
+import com.example.cv_back.cv.sidepanel.UserInfoService;
 import com.example.cv_back.validation.Validator;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
@@ -17,6 +16,12 @@ public class UserService {
     public User findUser(String username, String password) {
         Optional<User> optionalUser = userRepository.findUser(username, password);
         User user = Validator.getValidUser(optionalUser);
+        return user;
+    }
+
+
+    public User findUserInfo(Integer userId) {
+        User user = userRepository.findById(userId).get();
         return user;
     }
 }

@@ -9,5 +9,13 @@ public interface UserMapper {
     @Mapping(source = "id", target = "userId")
     @Mapping(source = "role.type", target = "roleType")
     UserDto toDto(User user);
+    @Mapping(source = "email", target = "email")
+    @Mapping(source = "github", target = "github")
+    @Mapping(source = "description", target = "description")
+    @Mapping(source = "firstname", target = "firstname")
+    @Mapping(source = "lastname", target = "lastname")
+    @Mapping(source = "telephone", target = "telephone")
+    @Mapping(source = "linkedin", target = "linkedin")
 
+    UserDto userInfoDto(User userInfo);
 }
