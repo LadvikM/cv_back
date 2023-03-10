@@ -1,4 +1,4 @@
-package com.example.cv_back.infrastructure.error;
+package com.example.cv_back.validation;
 
 import lombok.Getter;
 
