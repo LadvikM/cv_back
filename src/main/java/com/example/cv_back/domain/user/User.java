@@ -1,5 +1,6 @@
-package com.example.cv_back.domain;
+package com.example.cv_back.domain.user;
 
+import com.example.cv_back.domain.Role;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;

@@ -1,6 +1,6 @@
 package com.example.cv_back.validation;
 
-import com.example.cv_back.domain.User;
+import com.example.cv_back.domain.user.User;
 import com.example.cv_back.infrastructure.exception.DataNotFoundException;
 
 import java.util.Optional;
