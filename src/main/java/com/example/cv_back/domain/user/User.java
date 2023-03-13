@@ -52,14 +52,14 @@ public class User {
     @Column(name = "email", length = 100)
     private String email;
 
-    @Size(max = 50)
+    @Size(max = 100)
     @NotNull
-    @Column(name = "firstname", nullable = false, length = 50)
+    @Column(name = "firstname", nullable = false, length = 100)
     private String firstname;
 
-    @Size(max = 50)
+    @Size(max = 100)
     @NotNull
-    @Column(name = "lastname", nullable = false, length = 50)
+    @Column(name = "lastname", nullable = false, length = 100)
     private String lastname;
 
     public Integer getId() {

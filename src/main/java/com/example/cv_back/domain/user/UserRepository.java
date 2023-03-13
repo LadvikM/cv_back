@@ -1,6 +1,5 @@
 package com.example.cv_back.domain.user;
 
-import com.example.cv_back.domain.user.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 

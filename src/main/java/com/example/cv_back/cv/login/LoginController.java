@@ -1,6 +1,5 @@
 package com.example.cv_back.cv.login;
 
-import com.example.cv_back.cv.UserDto;
 import io.swagger.v3.oas.annotations.Operation;
 import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.GetMapping;

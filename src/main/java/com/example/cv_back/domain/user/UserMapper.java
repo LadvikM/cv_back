@@ -1,6 +1,7 @@
 package com.example.cv_back.domain.user;
 
-import com.example.cv_back.cv.UserDto;
+import com.example.cv_back.cv.login.UserDto;
+import com.example.cv_back.cv.sidepanel.UserInfoDto;
 import org.mapstruct.*;
 
 @Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE, componentModel = "spring")
@@ -16,6 +17,5 @@ public interface UserMapper {
     @Mapping(source = "lastname", target = "lastname")
     @Mapping(source = "telephone", target = "telephone")
     @Mapping(source = "linkedin", target = "linkedin")
-
-    UserDto userInfoDto(User userInfo);
+    UserInfoDto userInfoDto(User userInfo);
 }
