@@ -7,9 +7,9 @@ CREATE TABLE cv (
     id serial  NOT NULL,
     user_id int  NOT NULL,
     status char(1)  NOT NULL,
-    workplace_id int  NOT NULL,
-    education_id int  NOT NULL,
-    hobbies_id int  NOT NULL,
+    workplace_id int  NULL,
+    education_id int  NULL,
+    hobbies_id int  NULL,
     CONSTRAINT cv_pk PRIMARY KEY (id)
 );
 
