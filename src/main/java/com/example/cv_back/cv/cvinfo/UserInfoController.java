@@ -1,6 +1,5 @@
-package com.example.cv_back.cv.sidepanel;
+package com.example.cv_back.cv.cvinfo;
 
-import com.example.cv_back.cv.login.UserDto;
 import io.swagger.v3.oas.annotations.Operation;
 import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,11 +12,10 @@ public class UserInfoController {
     private UserInfoService userInfoService;
 
     @GetMapping("/userinfo")
-    @Operation(summary = "This service returns user info for sidepanels")
+    @Operation(summary = "This service returns user info")
     public UserInfoDto userInfo(@RequestParam Integer userId) {
         UserInfoDto userDto = userInfoService.userInfo(userId);
         return userDto;
     }
-
 
 }

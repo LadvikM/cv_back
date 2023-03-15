@@ -13,8 +13,8 @@ public class School {
 
     @Size(max = 255)
     @NotNull
-    @Column(name = "school_name", nullable = false)
-    private String schoolName;
+    @Column(name = "name", nullable = false)
+    private String name;
 
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
@@ -34,12 +34,12 @@ public class School {
         this.id = id;
     }
 
-    public String getSchoolName() {
-        return schoolName;
+    public String getName() {
+        return name;
     }
 
-    public void setSchoolName(String schoolName) {
-        this.schoolName = schoolName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Location getLocation() {

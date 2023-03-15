@@ -1,7 +1,9 @@
-package com.example.cv_back.cv.sidepanel;
+package com.example.cv_back.cv.cvinfo;
 
 
 import lombok.Data;
+
+import java.util.List;
 
 @Data
 public class UserInfoDto {
@@ -14,4 +16,6 @@ public class UserInfoDto {
     private String email;
     private String firstname;
     private String lastname;
+    private List<CompaniesDto> companies;
+    private List<SchoolsDto> schools;
 }

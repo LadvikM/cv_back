@@ -1,4 +1,4 @@
-package com.example.cv_back.cv.sidepanel;
+package com.example.cv_back.cv.cvinfo;
 
 import com.example.cv_back.domain.Entity.User;
 import com.example.cv_back.domain.user.UserMapper;
