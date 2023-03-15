@@ -1,4 +1,4 @@
-package com.example.cv_back.domain.Entity;
+package com.example.cv_back.domain.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;

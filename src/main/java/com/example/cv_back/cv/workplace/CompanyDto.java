@@ -5,11 +5,10 @@ import lombok.Data;
 import java.util.List;
 
 @Data
-public class WorkplaceDto {
-    private String workplaceName;
-    private String countryName;
+public class CompanyDto {
+    private String companyName;
+    private String userId;
     private String cityName;
-    private String positionId;
+    private String countryName;
     private List<PositionDto> positions;
-
 }

@@ -1,4 +1,4 @@
-package com.example.cv_back.cv.cvinfo;
+package com.example.cv_back.cv.sidepanelinfo;
 
 import io.swagger.v3.oas.annotations.Operation;
 import jakarta.annotation.Resource;
@@ -7,14 +7,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class UserInfoController {
+public class SidepanelController {
     @Resource
-    private UserInfoService userInfoService;
+    private SidepanelService userInfoService;
 
     @GetMapping("/userinfo")
     @Operation(summary = "This service returns user info")
-    public UserInfoDto userInfo(@RequestParam Integer userId) {
-        UserInfoDto userDto = userInfoService.userInfo(userId);
+    public SidepanelDto userInfo(@RequestParam Integer userId) {
+        SidepanelDto userDto = userInfoService.userInfo(userId);
         return userDto;
     }
 

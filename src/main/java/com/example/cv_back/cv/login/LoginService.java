@@ -1,6 +1,6 @@
 package com.example.cv_back.cv.login;
 
-import com.example.cv_back.domain.Entity.User;
+import com.example.cv_back.domain.entity.User;
 import com.example.cv_back.domain.user.UserMapper;
 import com.example.cv_back.domain.user.UserService;
 import jakarta.annotation.Resource;

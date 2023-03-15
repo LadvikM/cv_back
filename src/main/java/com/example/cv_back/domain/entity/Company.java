@@ -1,13 +1,14 @@
-package com.example.cv_back.domain.Entity;
+package com.example.cv_back.domain.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 @Entity
-@Table(name = "school")
-public class School {
+@Table(name = "company")
+public class Company {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Integer id;
 

@@ -17,20 +17,12 @@ INSERT INTO public.company (id, name, location_id, user_id) VALUES (DEFAULT, 'Zo
 INSERT INTO public.school (id, name, location_id, user_id) VALUES (DEFAULT, 'Estonian Aviation Academy', 1, 1);
 INSERT INTO public.school (id, name, location_id, user_id) VALUES (DEFAULT, 'Estonian Maritime Academy', 1, 2);
 
-INSERT INTO public.subject (id, name, start, "end", description) VALUES (DEFAULT, 'Aircraft Mechanic', '2020-04-01', '2022-01-17', 'Learning how to fix planes.');
-INSERT INTO public.subject (id, name, start, "end", description) VALUES (DEFAULT, 'Navigation', '2010-09-01', '2017-06-16', 'Leaning how to drive ships.');
+INSERT INTO public.subject (id, name, start, "end", description, school_id) VALUES (DEFAULT, 'Aircraft Mechanic', '2020-04-01', '2022-01-17', 'Learning how to fix planes.', 1);
+INSERT INTO public.subject (id, name, start, "end", description, school_id) VALUES (DEFAULT, 'Navigation', '2010-09-01', '2017-06-16', 'Leaning how to drive ships.', 2);
 
-INSERT INTO public.position (id, name, start, "end", description) VALUES (DEFAULT, 'Aircraft Mechanic', '2022-09-01', null, 'Fixing planes');
-INSERT INTO public.position (id, name, start, "end", description) VALUES (DEFAULT, 'Aircraft Mechanic Apprentice', '2020-04-01', '2022-08-31', 'Learning how to fix planes.');
-INSERT INTO public.position (id, name, start, "end", description) VALUES (DEFAULT, 'Navigation Officer', '2017-07-27', '2020-02-01', 'Sailing ships');
+INSERT INTO public.position (id, name, start, "end", description, company_id) VALUES (DEFAULT, 'Aircraft Mechanic', '2022-09-01', null, 'Fixing planes', 1);
+INSERT INTO public.position (id, name, start, "end", description, company_id) VALUES (DEFAULT, 'Aircraft Mechanic Apprentice', '2020-04-01', '2022-08-31', 'Learning how to fix planes.', 1);
+INSERT INTO public.position (id, name, start, "end", description, company_id) VALUES (DEFAULT, 'Navigation Officer', '2017-07-27', '2020-02-01', 'Sailing ships', 2);
 
 INSERT INTO public.additional_information (id, information_name, information_description, user_id) VALUES (DEFAULT, 'Driving licence', 'B - category', 1);
 INSERT INTO public.additional_information (id, information_name, information_description, user_id) VALUES (DEFAULT, 'Food', 'I like seeds', 2);
-
-INSERT INTO public.school_subject (id, subject_id, school_id) VALUES (DEFAULT, 1, 1);
-INSERT INTO public.school_subject (id, subject_id, school_id) VALUES (DEFAULT, 2, 2);
-
-INSERT INTO public.company_position (id, company_id, position_id) VALUES (DEFAULT, 1, 1);
-INSERT INTO public.company_position (id, company_id, position_id) VALUES (DEFAULT, 1, 2);
-INSERT INTO public.company_position (id, company_id, position_id) VALUES (DEFAULT, 2, 3);
-

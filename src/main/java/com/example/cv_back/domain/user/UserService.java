@@ -1,7 +1,7 @@
 package com.example.cv_back.domain.user;
 
 
-import com.example.cv_back.domain.Entity.User;
+import com.example.cv_back.domain.entity.User;
 import com.example.cv_back.validation.Validator;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;

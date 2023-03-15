@@ -1,21 +1,21 @@
-package com.example.cv_back.cv.cvinfo;
+package com.example.cv_back.cv.sidepanelinfo;
 
-import com.example.cv_back.domain.Entity.User;
+import com.example.cv_back.domain.entity.User;
 import com.example.cv_back.domain.user.UserMapper;
 import com.example.cv_back.domain.user.UserService;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
 
 @Service
-public class UserInfoService {
+public class SidepanelService {
 
     @Resource
     private UserService userService;
     @Resource
     private UserMapper userMapper;
-    public UserInfoDto userInfo(Integer userId) {
+    public SidepanelDto userInfo(Integer userId) {
         User userInfo = userService.findUserInfo(userId);
-        UserInfoDto userInfoDto = userMapper.userInfoDto(userInfo);
+        SidepanelDto userInfoDto = userMapper.userInfoDto(userInfo);
 
         return userInfoDto;
     }
