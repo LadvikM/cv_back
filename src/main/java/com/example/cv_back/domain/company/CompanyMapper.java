@@ -10,7 +10,7 @@ import java.util.List;
 public interface CompanyMapper {
     Company toEntity(CompanyDto companyDto);
     @Mapping(source = "name", target = "companyName")
-    @Mapping(source = "user.id", target = "userId")
+    @Mapping(source = "id", target = "companyId")
     @Mapping(source = "location.city", target = "cityName")
     @Mapping(source = "location.country", target = "countryName")
     CompanyDto toDto(Company company);

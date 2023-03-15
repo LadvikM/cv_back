@@ -7,7 +7,7 @@ import java.util.List;
 @Data
 public class CompanyDto {
     private String companyName;
-    private String userId;
+    private Integer companyId;
     private String cityName;
     private String countryName;
     private List<PositionDto> positions;
