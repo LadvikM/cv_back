@@ -1,4 +1,4 @@
-package com.example.cv_back.domain;
+package com.example.cv_back.domain.Entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -13,12 +13,12 @@ public class Location {
     @Column(name = "id", nullable = false)
     private Integer id;
 
-    @Size(max = 100)
-    @Column(name = "city", length = 100)
+    @Size(max = 255)
+    @Column(name = "city")
     private String city;
 
-    @Size(max = 100)
-    @Column(name = "country", length = 100)
+    @Size(max = 255)
+    @Column(name = "country")
     private String country;
 
     public Integer getId() {

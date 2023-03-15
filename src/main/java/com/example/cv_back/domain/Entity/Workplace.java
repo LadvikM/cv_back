@@ -1,4 +1,4 @@
-package com.example.cv_back.domain;
+package com.example.cv_back.domain.Entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
@@ -11,9 +11,9 @@ public class Workplace {
     @Column(name = "id", nullable = false)
     private Integer id;
 
-    @Size(max = 100)
+    @Size(max = 255)
     @NotNull
-    @Column(name = "name", nullable = false, length = 100)
+    @Column(name = "name", nullable = false)
     private String name;
 
     @NotNull
@@ -23,8 +23,8 @@ public class Workplace {
 
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "position_id", nullable = false)
-    private Position position;
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
 
     public Integer getId() {
         return id;
@@ -50,12 +50,12 @@ public class Workplace {
         this.location = location;
     }
 
-    public Position getPosition() {
-        return position;
+    public User getUser() {
+        return user;
     }
 
-    public void setPosition(Position position) {
-        this.position = position;
+    public void setUser(User user) {
+        this.user = user;
     }
 
 }

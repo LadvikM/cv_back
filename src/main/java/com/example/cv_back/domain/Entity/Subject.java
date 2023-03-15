@@ -1,4 +1,4 @@
-package com.example.cv_back.domain;
+package com.example.cv_back.domain.Entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -10,15 +10,15 @@ import jakarta.validation.constraints.Size;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "\"position\"")
-public class Position {
+@Table(name = "subject")
+public class Subject {
     @Id
     @Column(name = "id", nullable = false)
     private Integer id;
 
-    @Size(max = 100)
+    @Size(max = 255)
     @NotNull
-    @Column(name = "name", nullable = false, length = 100)
+    @Column(name = "name", nullable = false)
     private String name;
 
     @NotNull
@@ -29,7 +29,8 @@ public class Position {
     private LocalDate end;
 
     @Size(max = 5000)
-    @Column(name = "description", length = 5000)
+    @NotNull
+    @Column(name = "description", nullable = false, length = 5000)
     private String description;
 
     public Integer getId() {

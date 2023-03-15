@@ -1,12 +1,13 @@
 package com.example.cv_back.domain.user;
 
 
-import com.example.cv_back.cv.sidepanel.UserInfoService;
+import com.example.cv_back.domain.Entity.User;
 import com.example.cv_back.validation.Validator;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
+
 
 @Service
 public class UserService {

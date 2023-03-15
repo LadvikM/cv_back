@@ -1,30 +1,30 @@
-package com.example.cv_back.domain;
+package com.example.cv_back.domain.Entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 @Entity
-@Table(name = "education")
-public class Education {
+@Table(name = "school")
+public class School {
     @Id
     @Column(name = "id", nullable = false)
     private Integer id;
+
+    @Size(max = 255)
+    @NotNull
+    @Column(name = "school_name", nullable = false)
+    private String schoolName;
 
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "location_id", nullable = false)
     private Location location;
 
-    @Size(max = 100)
-    @NotNull
-    @Column(name = "school_name", nullable = false, length = 100)
-    private String schoolName;
-
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "subject_id", nullable = false)
-    private Subject subject;
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
 
     public Integer getId() {
         return id;
@@ -32,14 +32,6 @@ public class Education {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public Location getLocation() {
-        return location;
-    }
-
-    public void setLocation(Location location) {
-        this.location = location;
     }
 
     public String getSchoolName() {
@@ -50,12 +42,20 @@ public class Education {
         this.schoolName = schoolName;
     }
 
-    public Subject getSubject() {
-        return subject;
+    public Location getLocation() {
+        return location;
     }
 
-    public void setSubject(Subject subject) {
-        this.subject = subject;
+    public void setLocation(Location location) {
+        this.location = location;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
 }

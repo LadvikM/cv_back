@@ -1,28 +1,25 @@
-package com.example.cv_back.domain;
+package com.example.cv_back.domain.Entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "subject")
-public class Subject {
+@Table(name = "\"position\"")
+public class Position {
     @Id
     @Column(name = "id", nullable = false)
     private Integer id;
 
-    @Size(max = 100)
-    @NotNull
-    @Column(name = "name", nullable = false, length = 100)
+    @Size(max = 255)
+    @Column(name = "name")
     private String name;
 
-    @NotNull
-    @Column(name = "start", nullable = false)
+    @Column(name = "start")
     private LocalDate start;
 
     @Column(name = "\"end\"")

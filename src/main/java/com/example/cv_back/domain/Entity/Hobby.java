@@ -1,9 +1,6 @@
-package com.example.cv_back.domain;
+package com.example.cv_back.domain.Entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
@@ -14,9 +11,8 @@ public class Hobby {
     @Column(name = "id", nullable = false)
     private Integer id;
 
-    @Size(max = 100)
-    @NotNull
-    @Column(name = "name", nullable = false, length = 100)
+    @Size(max = 255)
+    @Column(name = "name")
     private String name;
 
     @Size(max = 5000)
@@ -25,6 +21,11 @@ public class Hobby {
 
     @Column(name = "picture")
     private byte[] picture;
+
+    @NotNull
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
 
     public Integer getId() {
         return id;
@@ -56,6 +57,14 @@ public class Hobby {
 
     public void setPicture(byte[] picture) {
         this.picture = picture;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
 }

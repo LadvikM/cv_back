@@ -1,6 +1,5 @@
-package com.example.cv_back.domain.user;
+package com.example.cv_back.domain.Entity;
 
-import com.example.cv_back.domain.Role;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -9,7 +8,6 @@ import jakarta.validation.constraints.Size;
 @Table(name = "\"user\"")
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Integer id;
 
@@ -18,48 +16,49 @@ public class User {
     @JoinColumn(name = "role_id", nullable = false)
     private Role role;
 
-    @Size(max = 50)
+    @Size(max = 255)
     @NotNull
-    @Column(name = "username", nullable = false, length = 50)
+    @Column(name = "username", nullable = false)
     private String username;
 
-    @Size(max = 50)
+    @Size(max = 255)
     @NotNull
-    @Column(name = "password", nullable = false, length = 50)
+    @Column(name = "password", nullable = false)
     private String password;
 
     @Column(name = "picture")
     private byte[] picture;
 
     @Size(max = 5000)
-    @NotNull
-    @Column(name = "description", nullable = false, length = 5000)
+    @Column(name = "description", length = 5000)
     private String description;
 
-    @Size(max = 100)
-    @Column(name = "github", length = 100)
+    @Size(max = 255)
+    @Column(name = "github")
     private String github;
 
-    @Size(max = 100)
-    @Column(name = "linkedin", length = 100)
+    @Size(max = 255)
+    @Column(name = "linkedin")
     private String linkedin;
 
-    @Size(max = 100)
-    @Column(name = "telephone", length = 100)
+    @Size(max = 255)
+    @NotNull
+    @Column(name = "telephone", nullable = false)
     private String telephone;
 
-    @Size(max = 100)
-    @Column(name = "email", length = 100)
+    @Size(max = 255)
+    @NotNull
+    @Column(name = "email", nullable = false)
     private String email;
 
-    @Size(max = 100)
+    @Size(max = 255)
     @NotNull
-    @Column(name = "firstname", nullable = false, length = 100)
+    @Column(name = "firstname", nullable = false)
     private String firstname;
 
-    @Size(max = 100)
+    @Size(max = 255)
     @NotNull
-    @Column(name = "lastname", nullable = false, length = 100)
+    @Column(name = "lastname", nullable = false)
     private String lastname;
 
     public Integer getId() {

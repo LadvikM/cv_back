@@ -2,6 +2,7 @@ package com.example.cv_back.domain.user;
 
 import com.example.cv_back.cv.login.UserDto;
 import com.example.cv_back.cv.sidepanel.UserInfoDto;
+import com.example.cv_back.domain.Entity.User;
 import org.mapstruct.*;
 
 @Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE, componentModel = "spring")

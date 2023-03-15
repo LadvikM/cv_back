@@ -1,6 +1,9 @@
-package com.example.cv_back.domain;
+package com.example.cv_back.domain.Entity;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
@@ -8,13 +11,12 @@ import jakarta.validation.constraints.Size;
 @Table(name = "role")
 public class Role {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Integer id;
 
-    @Size(max = 20)
+    @Size(max = 255)
     @NotNull
-    @Column(name = "type", nullable = false, length = 20)
+    @Column(name = "type", nullable = false)
     private String type;
 
     public Integer getId() {
