@@ -1,6 +1,9 @@
 package com.example.cv_back.domain.Entity;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
@@ -28,11 +31,6 @@ public class Subject {
     @Size(max = 5000)
     @Column(name = "description", length = 5000)
     private String description;
-
-    @NotNull
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "school_id", nullable = false)
-    private School school;
 
     public Integer getId() {
         return id;
@@ -72,14 +70,6 @@ public class Subject {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public School getSchool() {
-        return school;
-    }
-
-    public void setSchool(School school) {
-        this.school = school;
     }
 
 }

@@ -1,6 +1,8 @@
 package com.example.cv_back.cv.cvinfo;
 
 
+import com.example.cv_back.cv.cvinfo.Dtos.CompaniesDto;
+import com.example.cv_back.cv.cvinfo.Dtos.SchoolsDto;
 import lombok.Data;
 
 import java.util.List;
@@ -18,4 +20,6 @@ public class UserInfoDto {
     private String lastname;
     private List<CompaniesDto> companies;
     private List<SchoolsDto> schools;
+
+//    private List<HobbiesDto> hobbies;
 }

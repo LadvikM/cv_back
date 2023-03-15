@@ -16,6 +16,7 @@ public class UserInfoService {
     public UserInfoDto userInfo(Integer userId) {
         User userInfo = userService.findUserInfo(userId);
         UserInfoDto userInfoDto = userMapper.userInfoDto(userInfo);
+
         return userInfoDto;
     }
 }

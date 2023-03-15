@@ -1,5 +1,5 @@
 -- Created by Vertabelo (http://vertabelo.com)
--- Last modification date: 2023-03-15 14:25:55.109
+-- Last modification date: 2023-03-15 15:44:47.152
 
 -- tables
 -- Table: additional_information
@@ -18,6 +18,14 @@ CREATE TABLE company (
     location_id int  NOT NULL DEFAULT null,
     user_id int  NOT NULL,
     CONSTRAINT workplace_pk PRIMARY KEY (id)
+);
+
+-- Table: company_position
+CREATE TABLE company_position (
+    id serial  NOT NULL,
+    company_id int  NOT NULL,
+    position_id int  NOT NULL,
+    CONSTRAINT company_position_pk PRIMARY KEY (id)
 );
 
 -- Table: hobbies
@@ -45,7 +53,6 @@ CREATE TABLE position (
     start date  NOT NULL DEFAULT null,
     "end" date  NULL DEFAULT null,
     description varchar(5000)  NULL DEFAULT null,
-    company_id int  NOT NULL,
     CONSTRAINT position_pk PRIMARY KEY (id)
 );
 
@@ -65,6 +72,14 @@ CREATE TABLE school (
     CONSTRAINT education_pk PRIMARY KEY (id)
 );
 
+-- Table: school_subject
+CREATE TABLE school_subject (
+    id serial  NOT NULL,
+    subject_id int  NOT NULL,
+    school_id int  NOT NULL,
+    CONSTRAINT school_subject_pk PRIMARY KEY (id)
+);
+
 -- Table: subject
 CREATE TABLE subject (
     id serial  NOT NULL,
@@ -72,7 +87,6 @@ CREATE TABLE subject (
     start date  NOT NULL DEFAULT null,
     "end" date  NULL DEFAULT null,
     description varchar(5000)  NULL DEFAULT null,
-    school_id int  NOT NULL,
     CONSTRAINT subject_pk PRIMARY KEY (id)
 );
 
@@ -103,6 +117,22 @@ ALTER TABLE additional_information ADD CONSTRAINT additional_information_user
     INITIALLY IMMEDIATE
 ;
 
+-- Reference: company_position_company (table: company_position)
+ALTER TABLE company_position ADD CONSTRAINT company_position_company
+    FOREIGN KEY (company_id)
+    REFERENCES company (id)  
+    NOT DEFERRABLE 
+    INITIALLY IMMEDIATE
+;
+
+-- Reference: company_position_position (table: company_position)
+ALTER TABLE company_position ADD CONSTRAINT company_position_position
+    FOREIGN KEY (position_id)
+    REFERENCES position (id)  
+    NOT DEFERRABLE 
+    INITIALLY IMMEDIATE
+;
+
 -- Reference: company_user (table: company)
 ALTER TABLE company ADD CONSTRAINT company_user
     FOREIGN KEY (user_id)
@@ -119,14 +149,6 @@ ALTER TABLE hobbies ADD CONSTRAINT hobbies_user
     INITIALLY IMMEDIATE
 ;
 
--- Reference: position_company (table: position)
-ALTER TABLE position ADD CONSTRAINT position_company
-    FOREIGN KEY (company_id)
-    REFERENCES company (id)  
-    NOT DEFERRABLE 
-    INITIALLY IMMEDIATE
-;
-
 -- Reference: school_location (table: school)
 ALTER TABLE school ADD CONSTRAINT school_location
     FOREIGN KEY (location_id)
@@ -135,18 +157,26 @@ ALTER TABLE school ADD CONSTRAINT school_location
     INITIALLY IMMEDIATE
 ;
 
--- Reference: school_user (table: school)
-ALTER TABLE school ADD CONSTRAINT school_user
-    FOREIGN KEY (user_id)
-    REFERENCES "user" (id)  
+-- Reference: school_subject_school (table: school_subject)
+ALTER TABLE school_subject ADD CONSTRAINT school_subject_school
+    FOREIGN KEY (school_id)
+    REFERENCES school (id)  
     NOT DEFERRABLE 
     INITIALLY IMMEDIATE
 ;
 
--- Reference: subject_school (table: subject)
-ALTER TABLE subject ADD CONSTRAINT subject_school
-    FOREIGN KEY (school_id)
-    REFERENCES school (id)  
+-- Reference: school_subject_subject (table: school_subject)
+ALTER TABLE school_subject ADD CONSTRAINT school_subject_subject
+    FOREIGN KEY (subject_id)
+    REFERENCES subject (id)  
+    NOT DEFERRABLE 
+    INITIALLY IMMEDIATE
+;
+
+-- Reference: school_user (table: school)
+ALTER TABLE school ADD CONSTRAINT school_user
+    FOREIGN KEY (user_id)
+    REFERENCES "user" (id)  
     NOT DEFERRABLE 
     INITIALLY IMMEDIATE
 ;

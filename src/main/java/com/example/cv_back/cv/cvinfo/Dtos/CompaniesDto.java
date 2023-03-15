@@ -1,4 +1,4 @@
-package com.example.cv_back.cv.cvinfo;
+package com.example.cv_back.cv.cvinfo.Dtos;
 
 import lombok.Data;
 
