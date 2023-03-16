@@ -8,6 +8,7 @@ import jakarta.validation.constraints.Size;
 @Table(name = "\"user\"")
 public class User {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Integer id;
 
@@ -60,6 +61,11 @@ public class User {
     @NotNull
     @Column(name = "lastname", nullable = false)
     private String lastname;
+
+    @Size(max = 1)
+    @NotNull
+    @Column(name = "cv_status", nullable = false, length = 1)
+    private String cvStatus;
 
     public Integer getId() {
         return id;
@@ -155,6 +161,14 @@ public class User {
 
     public void setLastname(String lastname) {
         this.lastname = lastname;
+    }
+
+    public String getCvStatus() {
+        return cvStatus;
+    }
+
+    public void setCvStatus(String cvStatus) {
+        this.cvStatus = cvStatus;
     }
 
 }

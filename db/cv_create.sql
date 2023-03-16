@@ -90,6 +90,7 @@ CREATE TABLE "user" (
                         email varchar(255)  NOT NULL DEFAULT null,
                         firstname varchar(255)  NOT NULL DEFAULT null,
                         lastname varchar(255)  NOT NULL DEFAULT null,
+                        cv_status varchar(1) NOT NULL,
                         CONSTRAINT username UNIQUE (username) NOT DEFERRABLE  INITIALLY IMMEDIATE,
                         CONSTRAINT user_pk PRIMARY KEY (id)
 );

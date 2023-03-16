@@ -31,4 +31,10 @@ public class Validator {
             throw new DataNotFoundException(NO_POSITIONS_FOUND.getMessage(), NO_POSITIONS_FOUND.getCode());
         }
     }
+
+    public static void checkActiveCV(List<User> activeCv) {
+        if (activeCv.isEmpty()) {
+            throw new DataNotFoundException(NO_ACTIVE_CVS.getMessage(), NO_ACTIVE_CVS.getCode());
+        }
+    }
 }
