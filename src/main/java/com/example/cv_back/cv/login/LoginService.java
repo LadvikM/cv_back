@@ -18,4 +18,9 @@ public class LoginService {
         UserDto loginResponse = userMapper.toDto(user);
         return loginResponse;
     }
+
+    public void addNewUser(NewUserDto newUserDto) {
+        User user = userMapper.toEntity(newUserDto);
+        userService.saveNewUser(user);
+    }
 }

@@ -11,7 +11,7 @@ public interface UserRepository extends JpaRepository<User, Integer> {
     @Query("select u from User u where u.username = ?1 and u.password = ?2")
     Optional<User> findUser(String username, String password);
 
-    @Query("select u from User u where u.cvStatus = ?1")
+    @Query("select u from User u where u.cvstatus = ?1")
     List<User> findActiveCv(String cvStatus);
 
 

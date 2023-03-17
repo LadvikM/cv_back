@@ -64,8 +64,8 @@ public class User {
 
     @Size(max = 1)
     @NotNull
-    @Column(name = "cv_status", nullable = false, length = 1)
-    private String cvStatus;
+    @Column(name = "cvstatus", nullable = false, length = 1)
+    private String cvstatus;
 
     public Integer getId() {
         return id;
@@ -163,12 +163,12 @@ public class User {
         this.lastname = lastname;
     }
 
-    public String getCvStatus() {
-        return cvStatus;
+    public String getCvstatus() {
+        return cvstatus;
     }
 
-    public void setCvStatus(String cvStatus) {
-        this.cvStatus = cvStatus;
+    public void setCvstatus(String cvstatus) {
+        this.cvstatus = cvstatus;
     }
 
 }

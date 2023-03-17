@@ -1,6 +1,7 @@
 package com.example.cv_back.domain.user;
 
 
+import com.example.cv_back.cv.login.NewUserDto;
 import com.example.cv_back.domain.entity.User;
 import com.example.cv_back.validation.Validator;
 import jakarta.annotation.Resource;
@@ -32,5 +33,9 @@ public class UserService {
         Validator.checkActiveCV(activeCv);
         return activeCv;
 
+    }
+
+    public void saveNewUser(User user) {
+        userRepository.save(user);
     }
 }

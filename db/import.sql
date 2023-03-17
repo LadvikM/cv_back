@@ -5,8 +5,8 @@ INSERT INTO public.role (id, type) VALUES (DEFAULT, 'user');
 INSERT INTO public.location (id, city, country) VALUES (DEFAULT, 'Tallinn', 'Estonia');
 INSERT INTO public.location (id, city, country) VALUES (DEFAULT, 'London', 'UK');
 
-INSERT INTO public."user" (id, role_id, username, password, picture, description, github, linkedin, telephone, email, firstname,lastname, cv_status) VALUES (DEFAULT, 1, 'mihkel', '123', null, 'Tere otsin tööd!', 'LadvikM', 'Ladvik', '+37253417899', 'Ladvik@gmail.com', 'Mihkel', 'Ladvik', 'A');
-INSERT INTO public."user" (id, role_id, username, password, picture, description, github, linkedin, telephone, email, firstname, lastname, cv_status) VALUES (DEFAULT, 2, 'norri', '123', null, 'Ei otsi tööd!', null, null, 'Ei ole', 'Ei ole', ' Norri', 'Bird', 'A');
+INSERT INTO public."user" (id, role_id, username, password, picture, description, github, linkedin, telephone, email, firstname,lastname, cvstatus) VALUES (DEFAULT, 1, 'mihkel', '123', null, 'Tere otsin tööd!', 'LadvikM', 'Ladvik', '+37253417899', 'Ladvik@gmail.com', 'Mihkel', 'Ladvik', 'A');
+INSERT INTO public."user" (id, role_id, username, password, picture, description, github, linkedin, telephone, email, firstname, lastname, cvstatus) VALUES (DEFAULT, 2, 'norri', '123', null, 'Ei otsi tööd!', null, null, 'Ei ole', 'Ei ole', ' Norri', 'Bird', 'A');
 
 INSERT INTO public.hobbies (id, name, description, picture, user_id) VALUES (DEFAULT, 'Photography', 'Taking pictures', null, 1);
 INSERT INTO public.hobbies (id, name, description, picture, user_id) VALUES (DEFAULT, 'Singing', 'Singing bird songs', null, 2);

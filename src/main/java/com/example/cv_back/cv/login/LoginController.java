@@ -2,14 +2,20 @@ package com.example.cv_back.cv.login;
 
 import io.swagger.v3.oas.annotations.Operation;
 import jakarta.annotation.Resource;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class LoginController {
     @Resource
     LoginService loginService;
+
+    @PostMapping("/register")
+    @Operation(summary = "This service adds new user to 'User' table")
+    public void addNewUser(@RequestBody NewUserDto newUserDto) {
+        loginService.addNewUser(newUserDto);
+    }
+
+
 
     @GetMapping("/login")
     @Operation(summary = "This service allows user to log in")
