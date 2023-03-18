@@ -1,7 +1,6 @@
 package com.example.cv_back.domain.user;
 
 
-import com.example.cv_back.cv.login.NewUserDto;
 import com.example.cv_back.domain.entity.User;
 import com.example.cv_back.validation.Validator;
 import jakarta.annotation.Resource;
@@ -16,6 +15,7 @@ public class UserService {
 
     @Resource
     private UserRepository userRepository;
+
     public User findUser(String username, String password) {
         Optional<User> optionalUser = userRepository.findUser(username, password);
         User user = Validator.getValidUser(optionalUser);
@@ -35,7 +35,11 @@ public class UserService {
 
     }
 
-    public void saveNewUser(User user) {
+    public void saveUser(User user) {
         userRepository.save(user);
+    }
+
+    public void deleteUser(Integer userId) {
+        userRepository.deleteById(userId);
     }
 }

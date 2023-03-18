@@ -1,13 +1,13 @@
-package com.example.cv_back.cv.login;
+package com.example.cv_back.cv.users.dtos;
 
 import lombok.Data;
 
 @Data
-public class NewUserDto {
+public class UserInfoDto {
     private String roleId;
     private String username;
     private String password;
-    private String picture;
+//    private String picture;
     private String userDescription;
     private String github;
     private String linkedin;

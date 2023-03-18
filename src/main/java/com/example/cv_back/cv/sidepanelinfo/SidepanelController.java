@@ -12,7 +12,7 @@ public class SidepanelController {
     private SidepanelService userInfoService;
 
     @GetMapping("/userinfo")
-    @Operation(summary = "This service returns user info")
+    @Operation(summary = "This service returns user info for sidepanel")
     public SidepanelDto userInfo(@RequestParam Integer userId) {
         SidepanelDto userDto = userInfoService.userInfo(userId);
         return userDto;

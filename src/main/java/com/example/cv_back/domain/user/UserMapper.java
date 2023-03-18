@@ -1,8 +1,8 @@
 package com.example.cv_back.domain.user;
 
 import com.example.cv_back.cv.AvailableCv.CvDto;
-import com.example.cv_back.cv.login.NewUserDto;
-import com.example.cv_back.cv.login.UserDto;
+import com.example.cv_back.cv.users.dtos.UserInfoDto;
+import com.example.cv_back.cv.users.dtos.UserDto;
 import com.example.cv_back.cv.sidepanelinfo.SidepanelDto;
 import com.example.cv_back.domain.entity.User;
 import org.mapstruct.*;
@@ -15,9 +15,9 @@ public interface UserMapper {
 
     @Mapping(constant = "2", target = "role.id")
     @Mapping(source = "userDescription", target = "description")
-    @Mapping(source = "picture", target = "picture", qualifiedByName = "stringToByteArray")
+//    @Mapping(source = "picture", target = "picture", qualifiedByName = "stringToByteArray")
     @Mapping(source = "cvStatus", target = "cvstatus")
-    User toEntity(NewUserDto newUserDto);
+    User toEntity(UserInfoDto newUserDto);
 
     @Mapping(source = "id", target = "userId")
     @Mapping(source = "role.type", target = "roleType")
@@ -35,10 +35,17 @@ public interface UserMapper {
     CvDto cvDto(User activeCv);
 
     List<CvDto> cvDtos(List<User> activeCv);
+
+    @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
+    User editUser(@MappingTarget User user, UserInfoDto userInfoDto);
+
+
+
     @Named("stringToByteArray")
     static byte[] stringToByteArray(String picture) {
         byte[] bytes = picture.getBytes(StandardCharsets.UTF_8);
         return bytes;
     }
+
 
 }

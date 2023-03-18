@@ -1,4 +1,4 @@
-package com.example.cv_back.cv.login;
+package com.example.cv_back.cv.users.dtos;
 
 import lombok.Data;
 
