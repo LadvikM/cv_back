@@ -6,7 +6,7 @@ import lombok.Data;
 @Data
 public class SidepanelDto {
 
-    //    private String picture;
+    private String picture;
     private String description;
     private String github;
     private String linkedin;
