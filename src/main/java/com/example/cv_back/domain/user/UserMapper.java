@@ -35,6 +35,7 @@ public interface UserMapper {
     SidepanelDto userInfoDto(User userInfo);
 
     @Mapping(source = "id", target = "userId")
+    @Mapping(expression = "java(PictureUtil.byteArrayToString(activeCv.getPicture()))", target = "picture")
     CvDto cvDto(User activeCv);
 
     List<CvDto> cvDtos(List<User> activeCv);

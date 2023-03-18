@@ -13,7 +13,7 @@ public class CvController {
     private CvService cvService;
 
     @GetMapping("/activecv")
-    @Operation(summary = "This service returns users with active cvs")
+    @Operation(summary = "This service returns users with active CVs")
     public List<CvDto> getActiveCv() {
         List<CvDto> activeCv = cvService.getActiveCv();
         return activeCv;
