@@ -8,5 +8,5 @@ import java.util.List;
 
 public interface PositionRepository extends JpaRepository<Position, Integer> {
     @Query("select p from Position p where p.company.id = ?1")
-    List<Position> findPositions(Integer companyIdd);
+    List<Position> findPositions(Integer companyId);
 }

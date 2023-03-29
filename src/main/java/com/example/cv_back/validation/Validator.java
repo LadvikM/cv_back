@@ -1,14 +1,13 @@
 package com.example.cv_back.validation;
 
-import com.example.cv_back.domain.entity.Company;
-import com.example.cv_back.domain.entity.Position;
-import com.example.cv_back.domain.entity.User;
+import com.example.cv_back.domain.entity.*;
 import com.example.cv_back.infrastructure.exception.DataNotFoundException;
 
 import java.util.List;
 import java.util.Optional;
 
 import static com.example.cv_back.validation.ErrorMessage.*;
+import static org.apache.logging.log4j.ThreadContext.isEmpty;
 
 public class Validator {
 
@@ -29,6 +28,16 @@ public class Validator {
     public static void checkPositionEntries(List<Position> positions) {
         if (positions.isEmpty()) {
             throw new DataNotFoundException(NO_POSITIONS_FOUND.getMessage(), NO_POSITIONS_FOUND.getCode());
+        }
+    }
+    public static void checkSchoolEntries(List<School> schools) {
+        if (schools.isEmpty()) {
+            throw new DataNotFoundException(NO_SCHOOLS_FOUND.getMessage(), NO_POSITIONS_FOUND.getCode());
+        }
+    }
+    public static void checkSubjectsEntries(List<Subject> subjects) {
+        if (subjects.isEmpty()) {
+            throw new DataNotFoundException(NO_SUBJECTS_FOUND.getMessage(), NO_POSITIONS_FOUND.getCode());
         }
     }
 
