@@ -15,7 +15,7 @@ public class CvController {
     @GetMapping("/activecv")
     @Operation(summary = "This service returns users with active CVs")
     public List<CvDto> getActiveCv() {
-        List<CvDto> activeCv = cvService.getActiveCv();
-        return activeCv;
+        List<CvDto> activeCvs = cvService.getActiveCv();
+        return activeCvs;
     }
 }

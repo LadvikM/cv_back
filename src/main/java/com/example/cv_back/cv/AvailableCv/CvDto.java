@@ -7,7 +7,6 @@ public class CvDto {
     private String firstname;
     private String lastname;
     private String userId;
-
     private String picture;
 
 }
