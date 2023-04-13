@@ -6,7 +6,7 @@ import lombok.Getter;
 public enum ErrorMessage {
 
     INCORRECT_CREDENTIALS("Wrong username/password", "400"),
-    NO_COMPANIES_FOUND("Company entries not found", "404"),
+    NO_COMPANIES_FOUND("Work experience not found", "404"),
     NO_POSITIONS_FOUND("Position entries not found", "404"),
     NO_SCHOOLS_FOUND("School entries not found", "404"),
     NO_SUBJECTS_FOUND("Subject entries not found", "404"),
