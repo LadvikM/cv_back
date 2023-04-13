@@ -16,4 +16,7 @@ public class CompanyService {
         Validator.checkEntries(company);
         return company;
     }
+    public void deleteCompanies(Integer companyId) {
+        companyRepository.deleteById(companyId);
+    }
 }

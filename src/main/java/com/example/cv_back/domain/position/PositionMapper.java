@@ -13,6 +13,8 @@ public interface PositionMapper {
     @Mapping(source = "start", target = "positionStartDate")
     @Mapping(source = "end", target = "positionEndDate")
     @Mapping(source = "description", target = "positionDescription")
+    @Mapping(source = "id", target = "positionId")
+
     PositionDto toDto(Position position);
     List<PositionDto> toDtos(List<Position> positions);
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)

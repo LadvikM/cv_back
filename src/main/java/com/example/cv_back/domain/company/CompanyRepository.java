@@ -10,4 +10,6 @@ public interface CompanyRepository extends JpaRepository<Company, Integer> {
     @Query("select c from Company c where c.user.id = ?1")
     List<Company> findCompany(Integer userId);
 
+
+
 }

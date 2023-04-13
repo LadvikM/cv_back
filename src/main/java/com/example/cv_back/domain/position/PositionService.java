@@ -1,5 +1,6 @@
 package com.example.cv_back.domain.position;
 
+import com.example.cv_back.domain.entity.Company;
 import com.example.cv_back.domain.entity.Position;
 import com.example.cv_back.validation.Validator;
 import jakarta.annotation.Resource;
@@ -18,4 +19,9 @@ public class PositionService {
         Validator.checkPositionEntries(positions);
         return positions;
     }
+
+    public void deletePosition(Integer positionId) {
+        positionRepository.deleteById(positionId);
+    }
+
 }

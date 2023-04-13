@@ -20,4 +20,10 @@ public class WorkplaceController {
         return workplaces;
     }
 
+    @DeleteMapping("/deleteWorkplaces")
+    @Operation(summary = "This service deletes all workplaces")
+    private void deleteAllWorkplaces(@RequestParam Integer userId) {
+        workplaceService.deleteAllWorkplaces(userId);
+    }
+
 }
