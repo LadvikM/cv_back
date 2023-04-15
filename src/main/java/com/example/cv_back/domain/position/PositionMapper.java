@@ -1,5 +1,6 @@
 package com.example.cv_back.domain.position;
 
+import com.example.cv_back.cv.workplace.CompanyDto;
 import com.example.cv_back.cv.workplace.PositionDto;
 import com.example.cv_back.domain.entity.Position;
 import org.mapstruct.*;
@@ -8,15 +9,25 @@ import java.util.List;
 
 @Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE, componentModel = "spring")
 public interface PositionMapper {
+    @Mapping(source = "positionName", target = "name")
+    @Mapping(source = "positionStartDate", target = "start")
+    @Mapping(source = "positionEndDate", target = "end")
+    @Mapping(source = "positionDescription", target = "description")
     Position toEntity(PositionDto positionDto);
+
+    List<Position> toEntities(List<PositionDto> positionDto);
+
     @Mapping(source = "name", target = "positionName")
     @Mapping(source = "start", target = "positionStartDate")
     @Mapping(source = "end", target = "positionEndDate")
     @Mapping(source = "description", target = "positionDescription")
     @Mapping(source = "id", target = "positionId")
-
     PositionDto toDto(Position position);
+
     List<PositionDto> toDtos(List<Position> positions);
+
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
     Position partialUpdate(PositionDto positionDto, @MappingTarget Position position);
+
+
 }

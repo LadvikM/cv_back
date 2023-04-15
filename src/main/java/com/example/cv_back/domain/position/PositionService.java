@@ -16,7 +16,7 @@ public class PositionService {
 
     public List<Position> findPositions(Integer companyId) {
         List<Position> positions = positionRepository.findPositions(companyId);
-        Validator.checkPositionEntries(positions);
+
         return positions;
     }
 
@@ -24,4 +24,7 @@ public class PositionService {
         positionRepository.deleteById(positionId);
     }
 
+    public void savePosition(Position position) {
+        positionRepository.save(position);
+    }
 }

@@ -6,6 +6,7 @@ import java.util.List;
 
 @Data
 public class CompanyDto {
+
     private String companyName;
     private Integer companyId;
     private String cityName;

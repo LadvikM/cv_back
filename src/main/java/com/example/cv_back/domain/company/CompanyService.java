@@ -19,4 +19,8 @@ public class CompanyService {
     public void deleteCompanies(Integer companyId) {
         companyRepository.deleteById(companyId);
     }
+
+    public void saveCompany(Company company) {
+        companyRepository.save(company);
+    }
 }

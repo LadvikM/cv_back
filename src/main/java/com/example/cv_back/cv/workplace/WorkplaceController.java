@@ -11,7 +11,11 @@ public class WorkplaceController {
     @Resource
     private WorkplaceService workplaceService;
 
-
+    @PostMapping("/addworkplaces")
+    @Operation(summary = "This service allows user to add workplaces")
+    private void addWorkplaces(@RequestBody CompanyDto companyDto, @RequestParam Integer userId) {
+        workplaceService.addWorkplaces(companyDto, userId);
+    }
 
     @GetMapping("/workplace")
     @Operation(summary = "This service returns user workplace")

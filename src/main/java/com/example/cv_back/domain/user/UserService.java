@@ -16,6 +16,8 @@ public class UserService {
     @Resource
     private UserRepository userRepository;
 
+
+
     public User findUser(String username, String password) {
         Optional<User> optionalUser = userRepository.findUser(username, password);
         User user = Validator.getValidUser(optionalUser);
@@ -41,5 +43,10 @@ public class UserService {
 
     public void deleteUser(Integer userId) {
         userRepository.deleteById(userId);
+    }
+
+    public User findUserById(Integer userId) {
+        User user = userRepository.findById(userId).get();
+        return user;
     }
 }
